@@ -1,0 +1,16 @@
+{
+  "name": "eos-client",
+  "version": "0.0.1",
+  "description": "restify客户端，作为Save项目的一部分，向eos-core发送rest请求，并接受返回信息。该客户端将被其他模块调用，如eos-adminui。",
+  "main": "index.js",
+  "repository": {
+    "url": "git@github.com:gavin-chan/node-eos-client.git",
+    "type": "git"
+  },
+  "author": "Gavin Chan <gavinchan267@gmail.com>",
+  "license": "MPL-2.0",
+  "dependencies": {
+    "assert-plus": "^1.0.0",
+    "restify-clients": "^1.5.0"
+  }
+}
