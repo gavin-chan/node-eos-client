@@ -38,12 +38,27 @@ restify客户端，作为Save项目的一部分，向eos-core发送rest请求，
 4. 上传
     
     ```js
+    /*
+     * @params {object} opts 上传信息
+     *  - opts.path {string} 缓存路径，必需
+     *  - opts.originalname {string} 原始文件名
+     *  - opts.type {string} 文件类型
+     *  - opts.visibility {string} 默认public
+     *  - opts.uploaded_by {string} 上传者的id
+     *  - opts.crypto {string} 加密方式，默认rc4
+     *  - opts.key {string} 加密密码
+     */
     client.upload(opts, (err, res) => {});
     ```
 
 5. 下载
     
     ```js
+    /*
+     * @params {object} opts 上传信息
+     *  - opts.path {string} 缓存路径，必需
+     *  - opts.uuid {string} 文件的uuid
+     */
     client.download(opts, (err, res) => {});
     ```
 
