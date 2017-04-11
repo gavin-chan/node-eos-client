@@ -16,12 +16,7 @@ restify客户端，作为Save项目的一部分，向eos-core发送rest请求，
      *  - opts.core_addr {string} core地址
      *  - opts.core_port {number} core端口
      */
-    let client = require('eos-client').createClient(opts, 
-    /*
-     * @params {object} err 错误对象，当有错误时，err不为空，否则为空，需要进行处理
-     * @params {object} res 请求正确时，返回的对象
-     */
-    (err, res) => {});
+    let client = require('eos-client').createClient(opts);
     ```
 
 3. 获取列表：
@@ -32,7 +27,12 @@ restify客户端，作为Save项目的一部分，向eos-core发送rest请求，
      *  - opts.uploaded_by {string} 上传者uuid 
      *  - opts.type {string} 文件类型
      */
-    client.getList(opts, (err, res) => {});
+    client.getList(opts, 
+    /*
+     * @params {object} err 错误对象，当有错误时，err不为空，否则为空，需要进行处理
+     * @params {object} res 请求正确时，返回的对象
+     */
+    (err, res) => {});
     ```
 
 4. 上传
