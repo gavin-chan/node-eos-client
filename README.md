@@ -56,7 +56,7 @@ restify客户端，作为Save项目的一部分，向eos-core发送rest请求，
     ```js
     /*
      * @params {object} opts 上传信息
-     *  - opts.path {string} 缓存路径，必需
+     *  - opts.cache_area {string} 缓存路径，必需
      *  - opts.uuid {string} 文件的uuid
      */
     client.download(opts, (err, res) => {});
