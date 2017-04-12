@@ -15,6 +15,7 @@ let CLIENT = function (options) {
   this.core_addr = options.core_addr;
   this.core_port = options.core_port;
 
+  this.log = options.log;
 
   assert.object(options, "options");
   this.client = clients.createJSONClient({
@@ -45,12 +46,13 @@ CLIENT.prototype.upload = function (opts, callback) {
 };
 
 CLIENT.prototype.download = function (opts, callback) {
+  this.log.debug(opts, "下载参数")
   this.client.get({
     path:'/api/files/' + opts.uuid,
     query: {cache_area: opts.cache_area}
   }, (err, req, res, obj) => {
     if (err) {
-      callback(err);
+      return callback(err);
     }
     callback(null, obj);
   });

@@ -1,6 +1,6 @@
 {
   "name": "eos-client",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "restify客户端，作为Save项目的一部分，向eos-core发送rest请求，并接受返回信息。该客户端将被其他模块调用，如eos-adminui。",
   "main": "index.js",
   "repository": {
