@@ -46,8 +46,8 @@ CLIENT.prototype.upload = function (opts, callback) {
 
 CLIENT.prototype.download = function (opts, callback) {
   this.client.get({
-    path:'/api/files',
-    query: opts
+    path:'/api/files/' + opts.uuid,
+    query: {cache_area: opts.cache_area}
   }, (err, req, res, obj) => {
     if (err) {
       callback(err);
