@@ -62,5 +62,11 @@ restify客户端，作为Save项目的一部分，向eos-core发送rest请求，
     client.download(opts, (err, res) => {});
     ```
 
+6. 获取加密方式
+
+    ```js
+    client.download((err, res) => {});
+    ```
+
 # 许可
 MPL v. 2. See [LICENSE](./LICENSE).

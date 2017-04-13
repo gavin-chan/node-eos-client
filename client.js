@@ -46,17 +46,28 @@ CLIENT.prototype.upload = function (opts, callback) {
 };
 
 CLIENT.prototype.download = function (opts, callback) {
-  this.log.debug(opts, "下载参数")
+  this.log.debug(opts, "下载参数");
   this.client.get({
     path:'/api/files/' + opts.uuid,
     query: {cache_area: opts.cache_area}
   }, (err, req, res, obj) => {
+    this.log.debug("client完成返回");
     if (err) {
       return callback(err);
     }
     callback(null, obj);
   });
-}
+};
+
+CLIENT.prototype.getCryptoes = function (callback) {
+  this.client.get('/api/cryptoes', (err, req, res, obj) => {
+    this.log.debug("client完成返回");
+    if (err) {
+      return callback(err);
+    }
+    callback(null, obj);
+  });
+};
 
 module.exports = {
   createClient: (opts) => {
